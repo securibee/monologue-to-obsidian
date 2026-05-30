@@ -13,7 +13,7 @@ from pathlib import Path
 
 # ─── Configure ──────────────────────────────────────────────────────────────
 OUTPUT_DIR = os.path.expanduser(
-    os.environ.get("MONOLOGUE_OUTPUT_DIR", "~/Obsidian/Monologue")
+    os.environ.get("MONOLOGUE_OUTPUT_DIR", "~/Documents/hivemind/voice")
 )
 CLI_PATH = os.path.expanduser(os.environ.get("MONOLOGUE_CLI", "~/.local/bin/monologue"))
 STATUS_FILE = os.path.expanduser("~/.monologue-backup-status.json")
@@ -104,7 +104,7 @@ def save_note(note, local_tz):
     date_only = local_dt.strftime("%Y-%m-%d")
     time_only = local_dt.strftime("%H%M")
     filename = f"{date_only}_{time_only}_{safe_title(title)}.md"
-    out = Path(OUTPUT_DIR) / local_dt.strftime("%Y") / local_dt.strftime("%m")
+    out = Path(OUTPUT_DIR) / local_dt.strftime("%Y")
 
     if (out / filename).exists():
         print(f"  exists: {filename}")
