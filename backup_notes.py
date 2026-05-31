@@ -13,7 +13,7 @@ from pathlib import Path
 
 # ─── Configure ──────────────────────────────────────────────────────────────
 OUTPUT_DIR = os.path.expanduser(
-    os.environ.get("MONOLOGUE_OUTPUT_DIR", "~/Documents/hivemind/voice")
+    os.environ.get("MONOLOGUE_OUTPUT_DIR", "~/Documents/hivemind/Voice")
 )
 CLI_PATH = os.path.expanduser(os.environ.get("MONOLOGUE_CLI", "~/.local/bin/monologue"))
 STATUS_FILE = os.path.expanduser("~/.monologue-backup-status.json")
@@ -116,7 +116,7 @@ def save_note(note, local_tz):
 
     md = [
         "---",
-        f"date: {date_only}",
+        f"date: '[[{date_only}]]'",
         f'time: "{local_dt.strftime("%H:%M")}"',
         "source: monologue",
         f"monologue_id: {note['note_id']}",
