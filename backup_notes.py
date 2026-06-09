@@ -120,6 +120,7 @@ def save_note(note, local_tz):
         f'time: "{local_dt.strftime("%H:%M")}"',
         "source: monologue",
         f"monologue_id: {note['note_id']}",
+        "reviewed: false",
         "---",
         "",
         f"# {title}",
